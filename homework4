@@ -1,0 +1,106 @@
+
+
+1
+from sys import argv
+script_name, first_param, second_param, third_param = argv
+value = (int(first_param) * int(second_param)) + int(third_param)
+print(f"Ваша зарплата: {value}")
+
+#############################################
+#############################################
+#############################################
+#############################################
+
+
+#2
+
+
+a = [el*34 for el in range(10,3000)]
+
+for i in range(1, len(a)):
+    if a[i] > a[i-1]:
+        print(a[i])
+list = [el%20 and el%21 for el in range(20,240)]
+print(list)
+
+
+#4
+
+#############################################
+#############################################
+#############################################
+#############################################
+
+
+a = [el * 2 for el in range(10, 30)]
+generat = (el+1 for el in a)
+clear = set(generat)
+print(clear)
+
+#5
+
+#############################################
+#############################################
+#############################################
+#############################################
+
+
+# variant A
+from functools import reduce
+
+def func(x,y):
+    z = x*y
+    return z
+
+list2 = [*range(99,1001)]
+all = reduce(func, list2)
+print(all)
+
+#variant B
+from functools import reduce
+list2 = [*range(99,1001)]
+all = reduce(lambda x,y: x*y, list2)
+print(all)
+
+#6
+
+#############################################
+#############################################
+#############################################
+#############################################
+
+
+#a
+import random
+user_number = int(input("Input min int"))
+end_int = int(input("Input max int"))
+print(random.randint(user_number, end_int))
+#b
+from itertools import cycle
+import random as r
+
+list = [*range(0,100)]
+for el in cycle(list):
+    if el > 90:
+        break
+    print(el)
+    el += 1
+
+#7
+
+#############################################
+#############################################
+#############################################
+#############################################
+
+
+import math as m
+
+x = int(input("Int"))
+def function():
+    yield(m.factorial(x))
+list = function()
+for i in list:
+    print(i)
+
+
