@@ -2,9 +2,13 @@
 
 1
 from sys import argv
-script_name, first_param, second_param, third_param = argv
-value = (int(first_param) * int(second_param)) + int(third_param)
-print(f"Ваша зарплата: {value}")
+def params():
+    script_name, first_param, second_param, third_param = argv
+    value = (int(first_param) * int(second_param)) + int(third_param)
+    print(f"Ваша зарплата: {value}")
+
+params()
+
 
 #############################################
 #############################################
