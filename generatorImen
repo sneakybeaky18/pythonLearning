@@ -1,0 +1,36 @@
+import random as r
+r1 = open("names.txt", "r", encoding="utf-8")
+r2 = r1.readlines()
+r3 = open("pogonala.txt", "r", encoding="utf-8")
+r4 = r3.readlines()
+def randname():
+    firstname = []
+    secondname = []
+    for el in r2:
+        firstname.append(el)
+    for el in r4:
+        secondname.append(el)
+    r.shuffle(firstname)
+    r.shuffle(secondname)
+    random_firstname = []
+    for el in firstname:
+        random_firstname.append(el)
+        break
+    random_secondname = []
+    for el in secondname:
+        random_secondname.append(el)
+        break
+    final = random_firstname+random_secondname
+    str1 = ''.join(str(e) for e in final)
+    str1 = str1.replace("\n"," ")
+    return str1
+
+randnameList = []
+while True:
+    randnameList.append(randname() + "\n")
+    dlina = len(randnameList)
+    if dlina >= 1000000:
+        break
+stroka = ''.join(str(e) for e in randnameList)
+with open("klikyxa.txt", "w", encoding="utf-8") as klich:
+    klich.writelines(stroka)
