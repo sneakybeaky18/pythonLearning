@@ -1,0 +1,101 @@
+import random as r
+from matplotlib import pyplot as plt
+
+class UsersGenMonth():
+    userMonth = 349
+    userYear = 2090
+    costYear = r.randint(1000, 2090)
+    income = 0
+    def UsersGenYearDef(self):
+        global income, costMonth, budget
+        budget = 150000
+        users = 0
+        i = 0
+        while budget > 0:
+            costMonth = r.randint(200, 500)
+            budget = budget-(costMonth)
+            i = i+1
+        income = i*(349*0.7)
+        # print(f"We got 50000 budget first, now we have {budget}, and we got {i} users and now we have {income}")
+
+    def Smth(self):
+        global income, costMonth
+        smnth = 0
+        while income > 0:
+            Chance = r.randint(1,2)
+            if Chance == 2:
+                income = income-costMonth
+                smnth = smnth+1
+        income = smnth * (349 * 0.7)
+        # print(f"Next month users: {smnth} with income {income}")
+        # print(income)
+        return income
+    def Generator(self):
+        incomeList = []
+        while True:
+            incomeList.append(self.Smth())
+            if len(incomeList) > 12:
+                break
+        users = []
+        for el in incomeList:
+            users.append(el/(349*0.7))
+        totalUsers = sum(users)
+
+        print(f"Users: {totalUsers}, total income = {totalUsers*(349*0.7)}")
+        print(f"Total profit: {totalUsers * (349 * 0.7) - 150000}")
+        plt.plot(incomeList)
+        plt.show()
+
+f = UsersGenMonth()
+f.UsersGenYearDef()
+f.Smth()
+f.Generator()
+
+class UsersGenYear():
+    userYear = 2090
+    costYear = r.randint(1000, 2090)
+    income = 0
+    def UsersGenYearDef1(self):
+        global income, costYear, budget
+        budget = 150000
+        users = 0
+        i = 0
+        while budget > 0:
+            costYear = r.randint(200, 500)
+            budget = budget-(costYear)
+            i = i+1
+        income = i*(349*0.7)
+        # print(f"We got 50000 budget first, now we have {budget}, and we got {i} users and now we have {income}")
+
+    def Smth1(self):
+        global income, costYear
+        smnth = 0
+        while income > 0:
+            Chance = r.randint(1,2)
+            if Chance == 2:
+                income = income-costYear
+                smnth = smnth+1
+        income = smnth * (349 * 0.7)
+        # print(f"Next month users: {smnth} with income {income}")
+        # print(income)
+        return income
+    def Generator1(self):
+        incomeList1 = []
+        while True:
+            incomeList1.append(self.Smth1())
+            if len(incomeList1) > 12:
+                break
+        users = []
+        for el in incomeList1:
+            users.append(el/(349*0.7))
+        totalUsers1 = sum(users)
+
+        print(f"Users2: {totalUsers1} total income = {totalUsers1*(349*0.7)}")
+        print(f"Total profit: {totalUsers1*(349*0.7)-150000}")
+        plt.plot(incomeList1)
+        plt.show()
+
+z = UsersGenYear()
+z.UsersGenYearDef1()
+z.Smth1()
+z.Generator1()
