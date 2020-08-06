@@ -5,9 +5,9 @@ growth = 30 #it means 30% percent
 # print(test)
 # 100-(100/100*10) расчёт процентов
 
-x = 1200000  # start price
-y = 10  # percents for hardpercent (it means 10%)
-z = 3  # period
+x = 1000000  # start price
+y = 2  # percents for hardpercent (it means 10%)
+z = 20  # period
 
 def Compound():
     global x,y,z
@@ -39,4 +39,4 @@ def Standart():
 
     return summaH
 
-print(f"Compound: {round(Compound())}, default {round(Standart())}, diffrence = {round(Compound())-round(Standart())}")
+print(f"Compound: {round(Compound())}, default {round(Standart())}, diffrence = {round(Compound())-round(Standart())}, diffrence in percents {round(((round(Compound())-round(Standart()))/round(Compound()))*100)}")
