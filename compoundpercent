@@ -1,0 +1,42 @@
+commision = 0.025 #it means 0.025% percent
+growth = 30 #it means 30% percent
+
+# test = 100-(100/100*0.035)
+# print(test)
+# 100-(100/100*10) расчёт процентов
+
+x = 1200000  # start price
+y = 10  # percents for hardpercent (it means 10%)
+z = 3  # period
+
+def Compound():
+    global x,y,z
+
+    i = 0
+    list = [x]
+
+    for el in list:
+        summa = (list[-1]+(list[-1]/100*y))
+        summaH1 = summa-(summa/100*commision)
+        list.append(summaH1)
+        i = i+1
+        if i == z:
+            break
+
+    # print(list)
+    # print(list[-1])
+
+    return summaH1
+
+def Standart():
+    global x,y,z
+
+    f = y*z
+    summa = x+(x/100*f)
+    summaH = summa-(summa/100*commision)
+
+    # print(summaH)
+
+    return summaH
+
+print(f"Compound: {round(Compound())}, default {round(Standart())}, diffrence = {round(Compound())-round(Standart())}")
