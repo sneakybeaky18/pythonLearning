@@ -1,5 +1,4 @@
 commision = 0.025 #it means 0.025% percent
-growth = 30 #it means 30% percent
 
 # test = 100-(100/100*0.035)
 # print(test)
