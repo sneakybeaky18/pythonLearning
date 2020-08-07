@@ -1,8 +1,6 @@
 commision = 0.025 #it means 0.025% percent
 
-# test = 100-(100/100*0.035)
-# print(test)
-# 100-(100/100*10) расчёт процентов
+# 100-(100/100*10) формула расчёта процентов
 
 x = 1000000  # start price
 y = 2  # percents for hardpercent (it means 10%)
